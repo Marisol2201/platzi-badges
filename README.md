@@ -1,0 +1,2 @@
+# platzi-badges
+App called platzi-badges, which consists of 6 pages. This app allows you to manage attendance at a conference, where you can add new users, participants, create sub-badges, edit their information and manage it. Learning how to handle components, which will be styled, linked to events that the user can take with a click or when he writes; every time you do an action its status changes. Platzi-badges API requests
