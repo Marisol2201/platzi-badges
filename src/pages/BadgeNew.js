@@ -4,30 +4,30 @@ import './styles/BadgeNew.css';
 import header from '../images/badge-header.svg';
 import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
-import Navbar from '../components/Navbar';
 
 class BadgeNew extends React.Component {
-  state = { form: {
-    firstName: '',
-    lastName: '',
-    email: '',
-    jobTitle: '',
-    twitter: ''
-  } };
+  state = {
+    form: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      jobTitle: '',
+      twitter: '',
+    },
+  };
 
   handleChange = e => {
     this.setState({
       form: {
-        ...this.setState.form,
-        [e.target.name]: e.target.value 
-      }
+        ...this.state.form,
+        [e.target.name]: e.target.value,
+      },
     });
-  }
+  };
 
   render() {
     return (
-      <div>
-        <Navbar />
+      <React.Fragment>
         <div className="BadgeNew_hero">
           <img className="img-fluid" src={header} alt="Logo" />
         </div>
@@ -41,16 +41,19 @@ class BadgeNew extends React.Component {
                 twitter={this.state.form.twitter}
                 jobTitle={this.state.form.jobTitle}
                 email={this.state.form.email}
-                avatarUrl="https://lh3.googleusercontent.com/ogw/ADGmqu9PS2RWru89tPwTmj35yXOKAGhUjjsbyuON8YQtNg=s83-c-mo"
+                avatarUrl="https://avatars2.githubusercontent.com/u/60391771?s=460&u=3ceb3bc5ab4042f62744fa7b0e8761bca8519511&v=4"
               />
             </div>
 
             <div className="col-6">
-              <BadgeForm onChange={this.handleChange} formValues={this.state.form} />
+              <BadgeForm
+                onChange={this.handleChange}
+                formValues={this.state.form}
+              />
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
